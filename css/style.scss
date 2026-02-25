@@ -1,0 +1,671 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    box-sizing:border-box;
+    outline:none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+
+}
+
+$black: #000;
+$white: #fff;
+$blue: #cae8e3;
+$babyblue: #d0e7f5;
+$pink: #f6e4d5;
+$yellow:#ffd080;
+$border: .2rem solid $black; 
+
+
+
+@mixin grid($val){
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    gap: 1.5rem;
+}
+
+
+html{
+font-size: 62.5%;
+overflow-x: hidden;
+scroll-behavior: smooth;
+scroll-padding-top: 7rem;
+
+&::-webkit-scrollbar{
+    width:1rem;
+}
+
+&::-webkit-scrollbar-track{
+    background: $white;
+}
+
+&::-webkit-scrollbar-thumb{
+    background: $black;
+ }
+}
+
+
+
+section{
+    padding:5rem 9%;
+}
+
+
+
+.heading{
+    text-align:center;
+    margin-bottom:3rem ;
+
+    span{
+        font-size:2.5rem;
+    }
+
+    h1
+    {
+        font-size: 4rem;
+        padding-top:.5rem;
+    }
+}
+
+.btn{
+    display: inline-block; 
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    color: $white;
+    background: $black;
+    border: $border;
+    cursor: pointer;
+    font-weight: bolder;
+    border-radius: .5rem;
+}
+
+:hover{
+    background: none;
+    color: $black;
+   
+}
+
+
+// yellow Highlite
+.line-down{
+    position:relative;
+    z-index:0;
+
+    &::before{
+        content: '';
+        position: absolute;
+        bottom:.5rem; left:0; right:0;
+        height:100%;
+        width:100%;
+        background: $yellow;
+        z-index: -1;
+        clip-path: polygon(0 80%, 100% 75%, 100% 100%, 0% 100%);
+    }
+}
+
+
+.header{
+position: sticky;
+top:0; left: 0; right:0;
+z-index: 1000;
+display: flex;
+align-items: center;
+justify-content: space-between;
+background: $white;
+box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+padding: 2rem 9%;
+
+ .logo{
+    font-size: 2.5rem;
+    color: $black;
+   
+    
+ } 
+
+  .navbar a{
+    margin: 0 1rem;
+    font-size: 2rem;
+    color: $black;
+
+    &:hover{
+        text-decoration: underline;
+    }
+
+
+  }
+  .btn
+  {
+    margin-top:0;
+  }
+
+}
+
+#menu-btn{
+    cursor: pointer;
+    font-size:3rem;
+    display: none;
+}
+
+
+// home
+.home{
+    min-height: 80vh;
+    display:flex;
+    align-items: center;
+    flex-wrap:wrap;
+    gap:2rem;
+    background: $babyblue;
+
+    .image{
+        flex:1 1 42rem;
+        margin-top: 5rem;
+
+        img{
+            width: 100%;
+            animation: floating 4s linear infinite;
+        }
+    }
+    .content{
+        flex:1 1 42rem;
+
+        h3{
+            font-size: 6.5rem;
+          
+        }
+        p{
+            font-size: 2rem;
+            padding:1rem 0;
+            line-height: 2;
+        }
+
+    }
+
+
+}
+
+
+// services
+.services{
+    background: $babyblue;
+    .box-container{
+        @include grid(32rem);
+
+        .box{
+            background: $white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: .5rem;
+
+            img{
+                height: 8rem;
+                margin-bottom:.7rem ;
+            }
+
+            h3{
+                font-size: 2.2rem;
+                padding:1.5rem 0;
+
+            }
+            p{
+                line-height: 2;
+                font-size: 1.7rem;
+            }
+        }
+    }
+}
+
+
+
+// dentist
+.dentist {
+    .box-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+      gap: 1.5rem;
+  
+      .box {
+        background: $white;
+        border: 0.1rem solid rgba(0, 0, 0, 0.2);
+        border-radius: 0.5rem;
+        box-shadow: var(--box-shadow);
+        
+  
+        .image {
+          height: 30rem;
+          width: 100%;
+          padding: 1.5rem;
+          overflow: hidden;
+  
+          img {
+            height: 100%;
+            width: 100%;
+            border-radius: 0.5rem;
+          }
+        }
+  
+        .content {
+          padding: 2rem;
+          padding-top: 0;
+  
+          h3 {
+            color: var(--black);
+            font-size: 2.5rem;
+          }
+  
+          p {
+            color: var(--light-color);
+            font-size: 1.6rem;
+            padding: 0.5rem 0;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+
+
+// appointment
+.appointment{
+    background: $babyblue;
+    min-height: 85vh;
+    display:flex;
+    align-items: center;
+    flex-wrap:wrap;
+    gap: 2rem;
+
+    .image{
+        flex:1 1 42rem;
+
+       img{
+        width: 100%;
+        animation: floating 4s linear infinite;
+       }
+    }
+    .content{
+        flex:1 1 42rem;
+
+        h3{
+            font-size: 6.5rem;
+          
+        }
+        p{
+            font-size: 2rem;
+            padding:1rem 0;
+            line-height: 2;
+        }
+
+    }
+}
+
+
+
+// reviews 
+.reviews{
+    .slide-container{
+       
+        .slide{
+            text-align: center;
+            max-width: 60rem;
+            margin: 1rem auto;
+            display: none;
+
+            &.active{
+                display: block;
+            }
+
+            img{
+                height: 10rem;
+                width: 10rem;
+                border-radius: 50%;
+                object-fit: cover;
+                animation: fadeUp .2s linear backwards;
+            }
+
+            p{
+                padding: 1.5rem 0;
+                font-size: 2rem;
+                line-height: 2;
+                animation: fadeUp .2s linear .4s backwards;
+
+
+            }
+
+            h3{
+                padding-bottom: .7rem;
+                font-size: 2rem;
+                animation: fadeUp .2s linear .6s backwards;
+            }
+
+            span{
+                display: block;
+                font-size: 1.7rem;
+                animation: fadeUp .2s linear .8s backwards;
+
+            }
+        }
+    } 
+    
+    .controls{
+        text-align: center;
+        margin-top: 2rem;
+
+        div{
+            font-size: 5rem;
+            cursor: pointer;
+            margin: 0 1rem;
+            
+            &:hover{
+                transform: scale(1.2);
+            }
+
+
+        }
+       
+
+
+    }
+}
+
+//news letter
+.newsletter{
+
+    .content{
+    text-align: center;
+    max-width: 60rem;
+    margin: 2rem auto;
+
+    h3{
+        font-size: 3rem;
+    }
+
+    p{
+        padding: 1rem 0;
+        line-height: 2;
+        font-size: 1.7rem;
+
+        a{
+            color: $black;
+
+            a:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+    form{
+        display: flex;
+        border: $border;
+        border-radius: .5rem;
+        padding: .5rem;
+        margin:1rem 0;
+
+        .email{
+            width: 100%;
+            padding: 1rem 1.4rem;
+            font-size: 1.7rem;
+            text-transform: none;
+        }
+
+        .btn{
+            margin-top: 0;
+
+        }
+
+    }
+    }
+    
+}
+
+
+// Dialog Modal 
+.dialog {
+    background-color: $pink;
+    border: $border;
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin:auto;
+ 
+    
+       
+        h2 {
+            font-size: 1.8rem;
+            color: $black;
+         }
+      
+         p {
+            font-size: 1rem;
+            color: $black;
+            margin-bottom: 2rem;
+         }
+      
+         button {
+            padding: 1rem 2rem;
+            background-color: $yellow;
+            color: $black;
+            border: $border;
+            border-radius: 5px;
+            cursor: pointer;
+      
+            &:hover {
+              border: $border;
+            }
+            
+         }
+    
+ }
+
+
+
+//footer
+ 
+.footer{
+    background: $pink;
+
+    .box-container{
+        @include grid(25rem);
+
+        .box{
+
+            h3{
+                font-size: 2rem;
+                padding:1rem 0;
+            }
+
+            a{
+                font-size: 1.5rem;
+                color: $black;
+                display: block;
+                padding: 1rem 0;
+
+                &:hover{
+                  text-decoration: underline;  
+                }
+            }
+        }
+    }
+}
+.credit{
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 1.7rem;
+}
+
+
+
+
+// about us
+.about{
+    background: $babyblue;
+    min-height: 85vh;
+    display:flex;
+    align-items: center;
+    flex-wrap:wrap;
+    gap: 2rem;
+
+    .image{
+        flex:1 1 42rem;
+
+       img{
+        width: 100%;
+        animation: floating 4s linear infinite;
+       }
+    }
+    .content{
+        flex:1 1 42rem;
+
+        h3{
+            
+            font-size: 5rem;
+            line-height: 1.5;
+        }
+
+        h4{
+            
+            font-size: 2.3rem;
+            line-height: 1.7;
+        }
+
+        p{
+            font-size: 1.7rem;
+            line-height: 1.5;
+            padding:1rem 0;
+
+        }
+    }
+}
+
+//founder
+.founder{
+    background: $babyblue;
+    min-height: 85vh;
+    display:flex;
+    align-items: center;
+    flex-wrap:wrap;
+    gap: 2rem;
+
+    .image{
+        flex:1 1 42rem;
+
+       img{
+        width: 100%;
+        animation: floating 4s linear infinite;
+       }
+    }
+    .content{
+        flex:1 1 42rem;
+
+        h3{
+            
+            font-size: 5rem;
+            line-height: 1.5;
+        }
+
+       
+
+        p{
+            font-size: 1.7rem;
+            line-height: 1.5;
+            padding:1rem 0;
+
+        }
+    }
+}
+
+
+// media queries
+
+@media (max-width: 1200px){
+    .header{
+    padding:2rem;
+}
+section{
+    padding:3rem 2rem;
+}
+.home .content h3{
+    font-size: 4rem;
+}
+
+}
+
+@media (max-width: 991px){
+    .html{
+        font-size: 55%;
+    }
+
+}
+
+
+@media (max-width: 949px){
+
+    #menu-btn{
+      display: inline-block;
+      transition:.2s linear;
+
+      &.fa-times{
+        transform: rotate(180deg);
+
+
+      }
+    }
+    .header{
+
+       .btn{
+        display: none;
+       }
+
+       .navbar{
+        position: absolute;
+        top: 99%; left: 0; right: 0;
+        border-top: $border;
+        background: $white;
+        display: none;
+        
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
+        transition: .2s linear;
+
+        
+    &.active {
+        display: block;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+        a{
+            display: block;
+            margin: 0;
+            padding:1.5rem 2rem;
+
+        }
+       }
+    }
+
+}
+
+
+@media (max-width: 450px){
+    .html{
+        font-size: 50%;
+    }
+
+    .heading h1{
+        font-size: 3rem;
+
+    }
+
+}
+
+
+
+  
+
+
+
+
+
