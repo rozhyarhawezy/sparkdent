@@ -16,11 +16,11 @@ SparkDent also includes an admin dashboard where administrators can view all boo
 
 SparkDent is designed to simplify the dental appointment process by providing:
 
-- 👨‍⚕️ Dentist profiles with professional information
-- 📅 Smart appointment booking system
-- ⏰ Real-time time slot validation
-- 🎨 Clean and modern UI design
-- 📱 Responsive layout for all devices
+-  Dentist profiles with professional information
+-  Smart appointment booking system
+-  Real-time time slot validation
+-  Clean and modern UI design
+-  Responsive layout for all devices
 
 The system prevents double bookings by automatically checking if a selected date and time have already been reserved.
 
@@ -49,6 +49,7 @@ The system prevents double bookings by automatically checking if a selected date
 - Smooth interactions using JavaScript
 - Fully responsive design
 - Professional healthcare aesthetic
+- 
 ### 5. Admin Dashboard
 - View all booked appointments
 - Monitor patient schedules in real-time
@@ -71,10 +72,7 @@ The system prevents double bookings by automatically checking if a selected date
 
 ---
 
-## 📜 License
+##  License
 
 This project is developed for educational purposes only.
 
----
-
-# ✨ SparkDent — Smart Dental Booking Made Simple
