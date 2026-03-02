@@ -1,8 +1,9 @@
 # 🦷 SparkDent
 
- **Live Demo:** [Visit SparkDent](https://sparkdent.netlify.app/)
+ **Live Demo:** [SparkDent](https://sparkdent.netlify.app/)
 
 > A Modern Dental Appointment Booking System
+
 SparkDent is a modern, user-friendly dental clinic web application built using **HTML, CSS, JavaScript, and PHP**.  
 The platform allows users to explore dentists, read about their professional background, and book appointments easily with real-time availability validation.
 
